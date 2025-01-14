@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digi-Art | Tienda de Stickers</title>
+    <!-- Incluir Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <!-- Incluir Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <!-- Barra de anuncios -->
+    <div class="barra-anuncios">
+        <p>🚚 Envío gratis en pedidos superiores a $30.000 | ⚡ Entrega en 24-48 horas</p>
+    </div>
+
+    <!-- Barra de navegación -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="imagenes/ICON-modified.png" alt="Logo Digi-Art" class="logo-img">
+            <h1>Digi-Art</h1>
+        </div>
+        <ul class="menu">
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#nosotros">Nosotros</a></li>
+            <li><a href="#productos">Productos</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+            <li><button onclick="toggleCarrito()">Carrito (<span id="carritoCount">0</span>)</button></li>
+        </ul>
+    </nav>
+
+    <!-- Héroe del Estandarte -->
+    <section id="hero">
+        <div class="hero-content">
+            <h2>Bienvenido a Digi-Art</h2>
+            <p>Explora nuestra colección de stickers premium</p>
+            <a href="#productos" class="btn-hero">Ver Productos</a>
+        </div>
+    </section>
+
+    <!-- Sección de Nosotros -->
+    <section id="nosotros" class="parallax">
+        <h2>Sobre Nosotros</h2>
+        <p>Somos Digi-Art, una tienda dedicada a ofrecer stickers de alta calidad con diseños exclusivos.</p>
+    </section>
+
+    <!-- Sección de Productos -->
+    <section id="productos">
+        <h2>Nuestros Productos</h2>
+        <div class="productos-galeria">
+            <!-- Productos se insertarán aquí -->
+        </div>
+    </section>
+
+    <!-- Sección de Testimonios -->
+    <section id="testimonios">
+        <h2>Testimonios</h2>
+        <div class="contenedor-testimonios">
+            <div class="testimonio">
+                <p>"Los stickers de Digi-Art son de excelente calidad. ¡Me encantan!"</p>
+                <h4>- Cliente Satisfecho</h4>
+            </div>
+            <div class="testimonio">
+                <p>"Gran variedad de diseños y envío rápido. Recomendado."</p>
+                <h4>- Cliente Feliz</h4>
+            </div>
+            <div class="testimonio">
+                <p>"Gran variedad de diseños y envío rápido.Los stickers muy buenos, la pagina muy goood Recomendado."</p>
+                <h4>- Cliente Super Satisfecho</h4>
+            </div>
+            <div class="testimonio">
+                <p>"Gran variedad de diseños y lo bueno es que podes armarte tu combo eligiendo de a uno o personalizados envío super rápido. Recomendadisimo."</p>
+                <h4>- Cliente Feliz</h4>
+            </div>
+            <div class="testimonio">
+                <p>"excelente calidad. Recomendado."</p>
+                <h4>- Cliente Satisfecho</h4>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Contacto -->
+    <section id="contacto" class="parallax">
+        <h2>Contacto</h2>
+        <p>Puedes contactarnos en nuestro correo: <a href="mailto:contacto@digi-art.com">contacto@digi-art.com</a></p>
+    </section>
+
+    <!-- Sección de Reseñas -->
+    <section id="reseñas">
+        <h2>Deja tu Reseña</h2>
+        <form id="form-reseña">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+            <label for="comentario">Comentario:</label>
+            <textarea id="comentario" name="comentario" required></textarea>
+            <button type="submit" class="btn-enviar">Enviar Reseña</button>
+        </form>
+        <div id="lista-reseñas">
+            <!-- Reseñas se insertarán aquí -->
+        </div>
+    </section>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; 2025 Lionel Adams. Todos los derechos reservados.</p>
+        <div class="footer-links">
+            <a href="#inicio">Inicio</a>
+            <a href="#nosotros">Nosotros</a>
+            <a href="#productos">Productos</a>
+            <a href="#contacto">Contacto</a>
+        </div>
+        <div class="social-icons">
+            <a href="https://www.instagram.com/tu_usuario" target="_blank" class="social-icon instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://wa.me/tu_numero" target="_blank" class="social-icon whatsapp">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+        </div>
+        <div class="location-icon">
+            <a href="https://www.google.com/maps/place/Tu+Ubicacion" target="_blank" class="social-icon google-maps">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Nuestra Ubicación</span>
+            </a>
+        </div>
+    </footer>
+
+    <!-- Modal del Carrito -->
+    <div id="carritoModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="toggleCarrito()">&times;</span>
+            <h3>Carrito de Compras</h3>
+            <div id="carritoItems">
+                <!-- Items del carrito se insertarán aquí -->
+            </div>
+            <div class="total">
+                <p>Total: $<span id="carritoTotal">0.00</span></p>
+                <button class="btn-pago" onclick="procederPago()">Proceder al Pago</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
